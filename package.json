@@ -1,0 +1,27 @@
+{
+  "name": "@vizr/browser",
+  "version": "0.1.0",
+  "description": "Vizr browser analytics SDK — zero config, one script tag",
+  "main": "dist/vizr.cjs.js",
+  "module": "dist/vizr.esm.js",
+  "browser": "dist/vizr.umd.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm,umd --dts --minify --global-name vizr",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "vitest run",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["analytics", "product-analytics", "vizr", "tracking"],
+  "author": "Vizr <hello@vizr.app>",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/vizr-app/browser.git" },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
